@@ -1,4 +1,4 @@
-# springMVC
+#Spring MVC
 Spring MVC Example
 
 This example runs in a Tomcat 8 Maven plugin. It also contains a in memory DB (HSQLDB).
