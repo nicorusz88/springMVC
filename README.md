@@ -1,7 +1,7 @@
 #Spring MVC
 Spring MVC Example
 
-This example runs in a Tomcat 8 Maven plugin. It also contains a in memory DB (HSQLDB).
+This example runs in a Tomcat 8 Maven plugin. It also contains an in memory DB (HSQLDB).
 
 Check in Eclipse you are using JDK 1.7 or above.
 
