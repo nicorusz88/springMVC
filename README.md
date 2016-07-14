@@ -3,6 +3,8 @@ Spring MVC Example
 
 This example runs in a Tomcat 8 Maven plugin. It also contains a in memory DB (HSQLDB).
 
+Check in Eclipse you are using JDK 1.7 or above.
+
 Once imported into Eclipse, select -> Run -> Debug Configurations -> Maven Build -> New Launch Configuration (left side on the top)
 
 Complete:
