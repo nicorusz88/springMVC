@@ -81,7 +81,7 @@ public abstract class GenericDaoImpl<T extends Serializable , ID extends Seriali
 
 	@Transactional(readOnly = false)
 	public void saveOrUpdate(T entity) {
-		hibernateTemplate.saveOrUpdate(entity);;
+		hibernateTemplate.saveOrUpdate(entity);
 	}
 
 	@Transactional(readOnly = false)
