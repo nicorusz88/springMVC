@@ -10,10 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.NotEmpty;
-import org.hibernate.validator.constraints.Range;
 import org.springframework.format.annotation.NumberFormat;
 import org.springframework.format.annotation.NumberFormat.Style;
 
@@ -29,10 +27,6 @@ public class Articulo implements Serializable {
 	
 	@NotEmpty
 	private String nombre;
-	
-	@NotEmpty
-	private String presentacion;
-	
 
 	@NumberFormat(style = Style.NUMBER)
 	private Float precio;
@@ -45,10 +39,9 @@ public class Articulo implements Serializable {
 	
 	
 
-	public Articulo(String nombre, String presentacion, Float precio,Integer cantidad) {
+	public Articulo(String nombre, Float precio,Integer cantidad) {
 		super();
 		this.nombre = nombre;
-		this.presentacion = presentacion;
 		this.precio = precio;
 		this.cantidad = cantidad;
 	}
@@ -73,14 +66,6 @@ public class Articulo implements Serializable {
 	}
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-	}
-	
-	@Column(name="presentacion")
-	public String getPresentacion() {
-		return presentacion;
-	}
-	public void setPresentacion(String presentacion) {
-		this.presentacion = presentacion;
 	}
 	
 	@Column(name="cantidad")

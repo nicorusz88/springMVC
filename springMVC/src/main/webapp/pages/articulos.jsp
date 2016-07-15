@@ -22,22 +22,17 @@
 
 		<table>
 			<tr>
-				<td><form:label path="nombre">nombre</form:label></td>
+				<td><form:label path="nombre">Nombre</form:label></td>
 				<td><form:input path="nombre" /></td>
 				<td><form:errors path="nombre" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="presentacion">presentacion</form:label></td>
-				<td><form:input path="presentacion" /></td>
-				<td><form:errors path="presentacion" cssClass="error" /></td>
-			</tr>
-			<tr>
-				<td><form:label path="precio">precio</form:label></td>
+				<td><form:label path="precio">Precio</form:label></td>
 				<td><form:input path="precio" /></td>
 				<td><form:errors path="precio" cssClass="error" /></td>
 			</tr>
 			<tr>
-				<td><form:label path="cantidad">cantidad</form:label></td>
+				<td><form:label path="cantidad">Cantidad</form:label></td>
 				<td><form:input path="cantidad" /></td>
 				<td><form:errors path="cantidad" cssClass="error" /></td>
 			</tr>
@@ -50,15 +45,13 @@
 	    
 	    <table border="1">
 	    	<tr>
-	           <td>nombre</td>
-	           <td>presentacion</td>
-	           <td>precio</td> 	
-	           <td>cantidad</td> 
+	           <td>Nombre</td>
+	           <td>Precio</td> 	
+	           <td>Cantidad</td> 
 	    	</tr>
 		   <c:forEach items="${articulos}" var="articulo">
 		         <tr>
 			        <td><c:out value="${articulo.nombre}"/></td>
-			        <td><c:out value="${articulo.presentacion}"/></td>
 			        <td><c:out value="${articulo.precio}"/></td>
 			        <td><c:out value="${articulo.cantidad}"/></td>
 			     </tr>    

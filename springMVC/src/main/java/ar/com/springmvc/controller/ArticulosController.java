@@ -18,49 +18,35 @@ import ar.com.springmvc.service.ArticuloService;
 
 @Controller
 public class ArticulosController {
-  
+
 	@Autowired
 	private ArticuloService articuloService;
-	
-	@RequestMapping(value="/articulos" , method = RequestMethod.GET)
-	public String init(ModelMap model){
- 	
-	 	model.addAttribute("articulo", new Articulo());
-	 	
-	    List<Articulo> articulos = articuloService.listarArticulos();
-	    model.addAttribute("articulos",articulos);
-		
+
+	@RequestMapping(value = "/articulos", method = RequestMethod.GET)
+	public String init(ModelMap model) {
+
+		model.addAttribute("articulo", new Articulo());
+
+		List<Articulo> articulos = articuloService.listarArticulos();
+		model.addAttribute("articulos", articulos);
+
 		return "articulos";
 	}
- 
-	
-   @RequestMapping(value = "/agregarArticulo", method = RequestMethod.POST)
-   public ModelAndView addContact(@ModelAttribute("articulo")@Valid Articulo articulo,
-	                             BindingResult result) {
-		  
-		  ModelAndView model = new ModelAndView("articulos");
-		  
-		  if(result.hasErrors()) {
-			   return model;
-	        }
-	         
-	       articuloService.salvarArticulo(articulo);
-	       List<Articulo> articulos = articuloService.listarArticulos();
-	       
-	       model.addObject("articulos",articulos);
-	       
-	      return model;
-	    }
 
-	public ArticuloService getArticuloService() {
-		return articuloService;
-	}
+	@RequestMapping(value = "/agregarArticulo", method = RequestMethod.POST)
+	public ModelAndView agregarArticulo(@ModelAttribute("articulo") @Valid Articulo articulo, BindingResult result) {
 
-	public void setArticuloService(ArticuloService articuloService) {
-		this.articuloService = articuloService;
+		ModelAndView model = new ModelAndView("articulos");
+
+		if (result.hasErrors()) {
+			return model;
+		}
+
+		articuloService.salvarArticulo(articulo);
+		List<Articulo> articulos = articuloService.listarArticulos();
+
+		model.addObject("articulos", articulos);
+
+		return model;
 	}
-	
- 
-	  
-	  
 }
