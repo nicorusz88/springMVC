@@ -53,7 +53,6 @@ public class ArticulosController {
 	
 	@RequestMapping(value = "/articulosjson", method = RequestMethod.GET)
 	public @ResponseBody List<Articulo> articulosJson() {
-
 		List<Articulo> articulos = articuloService.listarArticulos();
 		return articulos;
 	}
