@@ -1,5 +1,7 @@
 package ar.com.springmvc.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
@@ -8,11 +10,11 @@ import ar.com.springmvc.dao.FacturaDao;
 import ar.com.springmvc.entities.Factura;
 import ar.com.springmvc.service.FacturaService;
 
-@Service(value="facturaService")
-@Scope(value="prototype")
+@Service(value = "facturaService")
+@Scope(value = "prototype")
 public class FacturaServiceImpl implements FacturaService {
 
-    @Autowired
+	@Autowired
 	private FacturaDao facturaDao;
 
 	public FacturaDao getFacturaDao() {
@@ -23,15 +25,15 @@ public class FacturaServiceImpl implements FacturaService {
 		this.facturaDao = facturaDao;
 	}
 
-
 	@Override
 	public Factura crearFactura(Factura factura) {
-		factura.setTotal(0.0f);
 		factura.setId((Long) facturaDao.save(factura));
 		return factura;
 	}
 
+	@Override
+	public List<Factura> listarFacturas() {
+		return facturaDao.findAll();
+	}
 
-
-	
 }
