@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import ar.com.springmvc.entities.Articulo;
@@ -48,5 +49,14 @@ public class ArticulosController {
 		model.addObject("articulos", articulos);
 
 		return model;
+	}
+	
+	@RequestMapping(value = "/articulosjson", method = RequestMethod.GET)
+	public @ResponseBody List<Articulo> articulosJson(ModelMap model) {
+
+		model.addAttribute("articulo", new Articulo());
+
+		List<Articulo> articulos = articuloService.listarArticulos();
+		return articulos;
 	}
 }

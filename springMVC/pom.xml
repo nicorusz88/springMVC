@@ -13,6 +13,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<version.spring>3.0.5.RELEASE</version.spring>
+		<jackson.version>1.9.10</jackson.version>
 	</properties>
 
 	<dependencies>
@@ -174,6 +175,13 @@
 			<groupId>hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
 			<version>1.8.0.10</version>
+		</dependency>
+		
+		<!-- Jackson JSON Mapper -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>${jackson.version}</version>
 		</dependency>
 
 	</dependencies>
